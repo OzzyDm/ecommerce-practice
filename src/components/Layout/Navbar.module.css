@@ -1,0 +1,37 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20rem;
+  font-size: 1.6rem;
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+.notification {
+  border: none;
+  background-color: #555;
+  color: white;
+  text-decoration: none;
+  padding: 15px 26px;
+  position: relative;
+  display: inline-block;
+  border-radius: 1rem;
+}
+
+.notification:hover {
+  background: red;
+}
+
+.notification .badge {
+  font-size: 1rem;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
