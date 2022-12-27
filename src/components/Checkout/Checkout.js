@@ -12,6 +12,14 @@ function Checkout(props) {
     props.showState(false);
   }
 
+  const price = cartState.cart.filter((item) => item.price);
+  const total = price.map((item) => item.price);
+
+  const totalPrice = total.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
+  );
+
   return (
     <Fragment>
       {!props.show && ""}
@@ -31,6 +39,9 @@ function Checkout(props) {
                 />
               ))}
           </div>
+          <p className={classes.total}>
+            Total is ${(Math.round(totalPrice * 100) / 100).toFixed(2)}
+          </p>
         </div>
       )}
     </Fragment>

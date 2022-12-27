@@ -8,8 +8,6 @@ import classes from "./Navbar.module.css";
 function Navbar(props) {
   const cartState = useContext(CartContext);
 
-  console.log(props);
-
   function onClickHandler() {
     props.showState(true);
   }

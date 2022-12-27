@@ -9,3 +9,7 @@
   overflow: scroll;
   overflow-x: hidden;
 }
+
+.total {
+  font-size: 2rem;
+}
