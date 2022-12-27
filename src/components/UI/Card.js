@@ -12,6 +12,7 @@ function Card(props) {
     price: props.price,
     title: props.title,
     image: props.image,
+    quantity: 1,
   };
 
   function onClickHandler() {

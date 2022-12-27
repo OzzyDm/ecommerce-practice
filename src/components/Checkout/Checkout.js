@@ -38,10 +38,10 @@ function Checkout(props) {
                   image={data.image}
                 />
               ))}
+            <p className={classes.total}>
+              Total is ${(Math.round(totalPrice * 100) / 100).toFixed(2)}
+            </p>
           </div>
-          <p className={classes.total}>
-            Total is ${(Math.round(totalPrice * 100) / 100).toFixed(2)}
-          </p>
         </div>
       )}
     </Fragment>
