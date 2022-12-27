@@ -18,8 +18,6 @@ function Card(props) {
     cartState.setCart((previousState) => {
       return [...previousState, data];
     });
-
-    console.log(cartState.cart);
   }
 
   return (
