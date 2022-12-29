@@ -12,8 +12,11 @@ function Checkout(props) {
     props.showState(false);
   }
 
-  const price = cartState.cart.filter((item) => item.price);
-  const total = price.map((item) => item.price);
+  const total = cartState.cart.map((item) => item.price * item.quantity);
+  const f = new Intl.NumberFormat("en-us", {
+    currency: "CAD",
+    style: "currency",
+  });
 
   const totalPrice = total.reduce(
     (accumulator, currentValue) => accumulator + currentValue,
@@ -39,9 +42,7 @@ function Checkout(props) {
                   quantity={data.quantity}
                 />
               ))}
-            <p className={classes.total}>
-              Total is ${(Math.round(totalPrice * 100) / 100).toFixed(2)}
-            </p>
+            <p className={classes.total}>Total is {f.format(totalPrice)}</p>
           </div>
         </div>
       )}
