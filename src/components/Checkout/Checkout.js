@@ -36,6 +36,7 @@ function Checkout(props) {
                   title={data.title}
                   price={data.price}
                   image={data.image}
+                  quantity={data.quantity}
                 />
               ))}
             <p className={classes.total}>

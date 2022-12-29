@@ -16,9 +16,20 @@ function Card(props) {
   };
 
   function onClickHandler() {
-    cartState.setCart((previousState) => {
-      return [...previousState, data];
-    });
+    console.log(cartState.cart);
+    if (cartState.cart.find((item) => item.id === props.id)) {
+      const itemIndex = cartState.cart.findIndex(
+        (item) => item.id === props.id
+      );
+      cartState.setCart((previousState) => {
+        previousState[itemIndex].quantity += 1;
+        return [...previousState];
+      });
+    } else {
+      cartState.setCart((previousState) => {
+        return [...previousState, data];
+      });
+    }
   }
 
   return (

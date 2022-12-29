@@ -21,7 +21,37 @@ function CheckoutCard(props) {
     });
   }
 
-  function cartItemAddHandler() {}
+  function cartItemAddHandler() {
+    if (cartState.cart.find((item) => item.id === props.id)) {
+      const itemIndex = cartState.cart.findIndex(
+        (item) => item.id === props.id
+      );
+      cartState.setCart((previousState) => {
+        previousState[itemIndex].quantity += 1;
+        return [...previousState];
+      });
+    } else {
+      cartState.setCart((previousState) => {
+        return [...previousState, data];
+      });
+    }
+  }
+
+  function cartItemRemoveHandler() {
+    if (cartState.cart.find((item) => item.id === props.id)) {
+      const itemIndex = cartState.cart.findIndex(
+        (item) => item.id === props.id
+      );
+      cartState.setCart((previousState) => {
+        previousState[itemIndex].quantity -= 1;
+        return [...previousState];
+      });
+    } else {
+      cartState.setCart((previousState) => {
+        return [...previousState, data];
+      });
+    }
+  }
 
   return (
     <div className={classes.card}>
@@ -29,8 +59,13 @@ function CheckoutCard(props) {
       <h2>{props.title.slice(0, 20)}...</h2>
       <h5>$ {props.price}</h5>
       <span>
-        <button>-</button>
-        {data.quantity}
+        <button
+          onClick={cartItemRemoveHandler}
+          disabled={props.quantity <= 1 ? true : false}
+        >
+          -
+        </button>
+        {props.quantity}
         <button onClick={cartItemAddHandler}>+</button>
       </span>
       <button className={classes.button} onClick={removeItemHandler}>
