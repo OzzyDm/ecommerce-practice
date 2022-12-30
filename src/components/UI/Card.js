@@ -34,13 +34,12 @@ function Card(props) {
 
   return (
     <div className={classes.card}>
-      <h2>{props.title.slice(0, 43)}...</h2>
+      <h2 className={classes.title}>{props.title.slice(0, 25)}..</h2>
       <div className={classes.details}>
         <img src={props.image} alt={props.title} />
-        <p>{props.rating}</p>
-        <h3>{props.category}</h3>
-        <p>{props.description.slice(0, 70)}..</p>
-        <h5>$ {props.price}</h5>
+        <p>{props.rating} &#9733;</p>
+        <p className={classes.description}>{props.description.slice(0, 200)}</p>
+        <h5>CA${props.price}</h5>
       </div>
       <button className={classes.button} onClick={onClickHandler}>
         Add to Cart

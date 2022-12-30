@@ -57,7 +57,9 @@ function CheckoutCard(props) {
     <div className={classes.card}>
       <img src={props.image} alt={props.title} />
       <h2>{props.title.slice(0, 20)}...</h2>
-      <h5>$ {props.price * props.quantity} </h5>
+      <h5>
+        $ {(Math.round(props.price * props.quantity * 100) / 100).toFixed(2)}
+      </h5>
       <span>
         <button
           onClick={cartItemRemoveHandler}
