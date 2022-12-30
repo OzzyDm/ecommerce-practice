@@ -13,6 +13,7 @@ function Checkout(props) {
   }
 
   const total = cartState.cart.map((item) => item.price * item.quantity);
+
   const f = new Intl.NumberFormat("en-us", {
     currency: "CAD",
     style: "currency",
@@ -42,7 +43,12 @@ function Checkout(props) {
                   quantity={data.quantity}
                 />
               ))}
-            <p className={classes.total}>Total is {f.format(totalPrice)}</p>
+            {total.length > 0 && (
+              <p className={classes.total}>Total is {f.format(totalPrice)}</p>
+            )}
+            {total.length <= 0 && (
+              <p className={classes.total}>Your cart is empty.</p>
+            )}
           </div>
         </div>
       )}
