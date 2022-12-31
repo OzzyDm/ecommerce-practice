@@ -58,7 +58,7 @@ function CheckoutCard(props) {
       <img src={props.image} alt={props.title} />
       <h2>{props.title.slice(0, 20)}...</h2>
       <h5>
-        $ {(Math.round(props.price * props.quantity * 100) / 100).toFixed(2)}
+        CA${(Math.round(props.price * props.quantity * 100) / 100).toFixed(2)}
       </h5>
       <span>
         <button
