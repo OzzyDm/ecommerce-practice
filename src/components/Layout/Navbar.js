@@ -14,7 +14,7 @@ function Navbar(props) {
 
   return (
     <nav className={classes.navbar}>
-      <h1>Kardesler Store</h1>
+      <h1>Amazonia</h1>
       <button
         href="#"
         className={classes.notification}

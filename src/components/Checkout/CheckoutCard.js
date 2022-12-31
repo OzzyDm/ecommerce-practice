@@ -67,7 +67,8 @@ function CheckoutCard(props) {
         >
           -
         </button>
-        {props.quantity}
+        <span className={classes.qty}>{props.quantity}</span>
+
         <button onClick={cartItemAddHandler}>+</button>
       </span>
       <button className={classes.button} onClick={removeItemHandler}>

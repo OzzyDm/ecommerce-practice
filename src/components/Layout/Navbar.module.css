@@ -4,6 +4,8 @@
   align-items: center;
   margin: 0 20rem;
   font-size: 1.6rem;
+  border-bottom: 2px solid black;
+  text-transform: uppercase;
 }
 
 .icon {
