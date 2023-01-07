@@ -7,11 +7,16 @@
   margin: 1rem;
   overflow: hidden;
   padding: 1rem;
+  background-color: white;
+}
+
+.card h2 {
+  text-transform: uppercase;
 }
 
 .card img {
   height: 5rem;
-  width: auto;
+  width: 5rem;
   object-fit: contain;
 }
 
